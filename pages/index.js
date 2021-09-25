@@ -7,6 +7,7 @@ import masonryStyle from '../components/masonry.module.css'
 export default function Home({ blog }) {
   return (
     <Layout>
+      <span>例文を書く。正解と比べ間違いを修正する。それを繰り返す。</span>
       <Masonry
         breakpointCols={2}
         className={masonryStyle.myMasonryGrid}
