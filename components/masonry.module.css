@@ -1,0 +1,30 @@
+.myMasonryGrid {
+    display: box;
+    width: 100%;
+}
+
+.myMasonryGridColumn {
+    width: 100% !important;
+    background-clip: padding-box;
+}
+
+@media (min-width: 1000px) {
+    .myMasonryGrid {
+        display: flex;
+        margin-left: -30px;
+        /* gutter size offset */
+        width: auto;
+    }
+    .myMasonryGridColumn {
+        padding-left: 1.5rem;
+        /* gutter size */
+        background-clip: padding-box;
+    }
+    /* Style your items */
+    .myMasonryGridColumn>div {
+        /* change div to reference your elements you put in <Masonry> */
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 1.5rem;
+        border: thin solid #1a1a1a;
+    }
+}

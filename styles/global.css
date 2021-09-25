@@ -1,0 +1,38 @@
+html, body {
+    padding: 1rem;
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 200%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #5bc0de;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+    body::before {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1.3rem solid #1a1a1a;
+        overflow: hidden;
+    }
+    body {
+        padding: 2rem;
+        width: 60%;
+        margin: auto;
+    }
+}
