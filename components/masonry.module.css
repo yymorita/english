@@ -1,11 +1,17 @@
 .myMasonryGrid {
     display: box;
     width: 100%;
+    border-bottom: 2px, solid, grey;
 }
 
 .myMasonryGridColumn {
     width: 100% !important;
     background-clip: padding-box;
+    border-bottom: 2px, solid, #808080;
+}
+
+.myMasonryGridColumn>div {
+    border-bottom: 1px solid #808080;
 }
 
 @media (min-width: 1000px) {

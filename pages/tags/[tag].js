@@ -5,11 +5,11 @@ import masonryStyle from '../../components/masonry.module.css'
 import Card from '../../components/card'
 
 
-export default function TagId({ posts }) {
+export default function TagId({ posts, tag }) {
     return(
         <Layout>
             <Head>
-                <title></title>
+                <title>{ tag }</title>
             </Head>
             <Masonry
                 breakpointCols={2}
@@ -49,6 +49,7 @@ export const getStaticProps = async context => {
     return {
         props: {
             posts: data.contents,
+            tag: tag
         },
     };
 };
