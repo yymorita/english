@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from '../../components/layout';
+import Layout from '../../components/layout'
 import Moment from 'moment'
 import Link from 'next/link'
 import utilStyles from '../../styles/utils.module.css'
@@ -12,6 +12,10 @@ export default function BlogId({ blog }) {
             </Head>
             <h1>{blog.title}</h1>
             <span id={utilStyles.calendar}>{Moment(blog.date).format('YYYY年MM月DD日')}</span>
+            <div>
+                {blog.tags.map((tag) => <Link href={`/tags/${tag}`}>{tag}</Link>)}
+            </div>
+            <hr></hr>
             <div
                 dangerouslySetInnerHTML={{
                     __html: `${blog.contents}`,
