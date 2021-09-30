@@ -3,13 +3,11 @@
     display: -ms-flexbox; /* Not needed if autoprefixing */
     display: flex;
     width: 100%;
-    border-bottom: 1px, solid, grey;
 }
 
 .myMasonryGridColumn {
     width: 100% !important;
     background-clip: padding-box;
-    border-bottom: 1px, solid, #808080;
 }
 
 .myMasonryGridColumn>div {
