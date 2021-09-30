@@ -3,6 +3,7 @@ import Layout from '../../components/layout'
 import Masonry from 'react-masonry-css'
 import masonryStyle from '../../components/masonry.module.css'
 import Card from '../../components/card'
+import { breakpointColumnsObj } from '../../libs/breakpoint'
 
 
 export default function TagId({ posts, tag }) {
@@ -12,7 +13,7 @@ export default function TagId({ posts, tag }) {
                 <title>{ tag }</title>
             </Head>
             <Masonry
-                breakpointCols={2}
+                breakpointCols={breakpointColumnsObj}
                 className={masonryStyle.myMasonryGrid}
                 columnClassName={masonryStyle.myMasonryGridColumn}>
                 {posts.map((post) => <Card id={post.id} title={post.title} date={post.date} snippet={post.snippet} tags={post.tags}/>)}
