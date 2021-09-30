@@ -4,13 +4,14 @@ import Layout from '../components/layout'
 import Masonry from 'react-masonry-css'
 import masonryStyle from '../components/masonry.module.css'
 import Link from 'next/link'
+import { breakpointColumnsObj } from '../libs/breakpoint'
 
 export default function Home({ blog }) {
   return (
     <Layout>
       <div><Link href={'/tags'}>タグ</Link></div>
       <Masonry
-        breakpointCols={2}
+        breakpointCols={breakpointColumnsObj}
         className={masonryStyle.myMasonryGrid}
         columnClassName={masonryStyle.myMasonryGridColumn}>
         {blog.map((blog) => <Card id={blog.id} title={blog.title} date={blog.date} snippet={blog.snippet} tags={blog.tags}/>)}
