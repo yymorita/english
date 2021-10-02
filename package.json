@@ -8,11 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "microcms-js-sdk": "^1.2.0",
     "moment": "^2.29.1",
     "next": "^11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-google-charts": "^3.0.15",
     "react-masonry-css": "^1.0.16"
   }
 }

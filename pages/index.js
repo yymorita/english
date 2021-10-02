@@ -9,7 +9,7 @@ import { breakpointColumnsObj } from '../libs/breakpoint'
 export default function Home({ blog }) {
   return (
     <Layout>
-      <div><Link href={'/tags'}>タグ</Link></div>
+      <div><Link href={'/tags'}>タグ</Link> <Link href='https://klcal.netlify.app/'>カレンダー</Link></div>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className={masonryStyle.myMasonryGrid}
