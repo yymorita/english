@@ -1,3 +1,7 @@
 #calendar::before {
     content: "📅";
 }
+
+.rightSide {
+    text-align: right;
+}
