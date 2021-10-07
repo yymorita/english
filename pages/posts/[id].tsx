@@ -4,21 +4,21 @@ import Moment from 'moment'
 import Link from 'next/link'
 import utilStyles from '../../styles/utils.module.css'
 
-export default function BlogId({ blog }) {
+export default function BlogId({ blog }: {blog: {title: string, date: string, tags: string[], contents: string}[]}) {
     return (
         <Layout>
             <Head>
-                <title>{blog.title}</title>
+                <title>{blog['title']}</title>
             </Head>
-            <h1>{blog.title}</h1>
-            <span id={utilStyles.calendar}>{Moment(blog.date).format('YYYY年MM月DD日')}</span>
+            <h1>{blog['title']}</h1>
+            <span id={utilStyles.calendar}>{Moment(blog['date']).format('YYYY年MM月DD日')}</span>
             <div>
-                {blog.tags.map((tag) => <Link href={`/tags/${tag}`}>{tag}</Link>)}
+                {blog['tags'].map((tag) => <Link href={`/tags/${tag}`}>{tag}</Link>)}
             </div>
             <hr></hr>
             <div
                 dangerouslySetInnerHTML={{
-                    __html: `${blog.contents}`,
+                    __html: `${blog['contents']}`,
                 }}
             />
             <Link href={`/`}>ホームに戻る</Link>

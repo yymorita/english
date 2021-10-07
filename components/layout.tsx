@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import React from 'react'
 
-export default function Layout({children}) {
+function Layout({ children }: { children: React.ReactNode}) {
     return (
         <div className='layout'>
             <Head>
@@ -13,3 +14,5 @@ export default function Layout({children}) {
         </div>
     )
 }
+
+export default Layout

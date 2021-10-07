@@ -8,14 +8,16 @@ import { breakpointColumnsObj } from '../libs/breakpoint'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Home({ blog }) {
+  const cards = blog.map((blog) => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.date} snippet={blog.snippet} tags={blog.tags} />)
   return (
     <Layout>
       <div className={utilStyles.rightSide}><Link href={'/tags'}>タグ</Link> <Link href='https://klcal.netlify.app/'>カレンダー</Link></div>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className={masonryStyle.myMasonryGrid}
-        columnClassName={masonryStyle.myMasonryGridColumn}>
-        {blog.map((blog) => <Card id={blog.id} title={blog.title} date={blog.date} snippet={blog.snippet} tags={blog.tags}/>)}
+        columnClassName={masonryStyle.myMasonryGridColumn}
+      >
+        {cards}
       </Masonry>
     </Layout>
   );
