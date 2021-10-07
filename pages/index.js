@@ -5,11 +5,12 @@ import Masonry from 'react-masonry-css'
 import masonryStyle from '../components/masonry.module.css'
 import Link from 'next/link'
 import { breakpointColumnsObj } from '../libs/breakpoint'
+import utilStyles from '../styles/utils.module.css'
 
 export default function Home({ blog }) {
   return (
     <Layout>
-      <div><Link href={'/tags'}>タグ</Link> <Link href='https://klcal.netlify.app/'>カレンダー</Link></div>
+      <div className={utilStyles.rightSide}><Link href={'/tags'}>タグ</Link> <Link href='https://klcal.netlify.app/'>カレンダー</Link></div>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className={masonryStyle.myMasonryGrid}
