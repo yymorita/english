@@ -5,3 +5,10 @@
 .rightSide {
     text-align: right;
 }
+
+.pagination {
+    display: inline-block;
+    margin: 1rem;
+    width: 3rem;
+    text-align: center;
+}
