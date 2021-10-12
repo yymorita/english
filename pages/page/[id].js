@@ -27,7 +27,7 @@ export default function BlogPageId({ blog, totalCount }) {
 }
 
 // 動的なページを作成
-export const getStaticPaths = async () => {
+export const getStaticPaths = async (context) => {
     const key = {
         headers: { 'X-API-KEY': process.env.API_KEY }
     };
@@ -49,7 +49,6 @@ export const getStaticPaths = async () => {
 // データを取得
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    console.log(id)
     const key = {
         headers: { 'X-API-KEY': process.env.API_KEY }
     };
