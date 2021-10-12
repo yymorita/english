@@ -26,7 +26,7 @@ export default function Home({ blog, totalCount }) {
 }
 
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: 'english', queries: { orders: '-createdat' } });
+  const data = await client.get({ endpoint: 'english', queries: { orders: '-createdat', limit: 14 } });
 
   return {
     props: {

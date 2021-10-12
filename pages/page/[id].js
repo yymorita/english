@@ -49,12 +49,13 @@ export const getStaticPaths = async () => {
 // データを取得
 export const getStaticProps = async (context) => {
     const id = context.params.id;
+    console.log(id)
     const key = {
         headers: { 'X-API-KEY': process.env.API_KEY }
     };
 
     const data = await fetch(
-        `https://laprn.microcms.io/api/v1/english?offset=${(id - 1) * 5}&limit=15`,
+        `https://laprn.microcms.io/api/v1/english?offset=${(id-1) * 14}&limit=14`,
         key
     ).then(res => res.json()).catch(() => null)
     return {
