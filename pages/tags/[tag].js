@@ -27,7 +27,8 @@ export const getStaticPaths = async () => {
     const key = {
         headers: { 'X-API-KEY': process.env.API_KEY },
     };
-    const data = await fetch('https://laprn.microcms.io/api/v1/english', key)
+    const limit = 1024
+    const data = await fetch(`https://laprn.microcms.io/api/v1/english?${limit}`, key)
         .then(res => res.json())
         .catch(() => null);
     const paths = data.contents.map(content => `/tags/${content.tags}`);
@@ -41,8 +42,9 @@ export const getStaticProps = async context => {
         headers: { 'X-API-KEY': process.env.API_KEY },
         // params : { 'filters': `tags[contains]${encodeURI(tag)}`},
     };
+    const limit = 1024
     const data = await fetch(
-        `https://laprn.microcms.io/api/v1/english/?filters=tags[contains]${encodeURI(tag)}`,
+        `https://laprn.microcms.io/api/v1/english/?limit=${limit}&filters=tags[contains]${encodeURI(tag)}`,
         key
     )
         .then(res => res.json())
