@@ -9,6 +9,6 @@
 .pagination {
     display: inline-block;
     margin: 1rem;
-    width: 3rem;
+    /* width: 3rem; */
     text-align: center;
 }
