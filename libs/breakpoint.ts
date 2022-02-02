@@ -4,6 +4,6 @@ interface breakpointColumnsObj {
 }
 
 export const breakpointColumnsObj: breakpointColumnsObj = {
-    default: 2,
+    default: 1,
     800: 1,
 }

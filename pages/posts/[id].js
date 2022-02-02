@@ -12,10 +12,9 @@ export default function BlogId({ blog }) {
             </Head>
             <h1>{blog.title}</h1>
             <span id={utilStyles.calendar}>{Moment(blog['date']).format('YYYY年MM月DD日')}</span>
-            <div>
+            <div className={utilStyles.postBorderBottom}>
                 {blog.tags.map((tag) => <Link href={`/tags/${tag}`}>{tag}</Link>)}
             </div>
-            <hr></hr>
             <div
                 dangerouslySetInnerHTML={{
                     __html: `${blog.contents}`,

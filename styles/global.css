@@ -1,5 +1,5 @@
 html, body {
-    padding: 1rem;
+    padding: 0.3rem;
     margin: 0;
     font-family: sans-serif;
     line-height: 200%;
@@ -11,7 +11,7 @@ html, body {
 
 a {
     text-decoration: none;
-    color: #007bff;
+    /* color: #007bff; */
 }
 
 a:hover {
@@ -20,7 +20,7 @@ a:hover {
 
 @media (min-width: 1000px) {
     body {
-        padding: 2rem;
+        padding: 0rem;
         width: 60%;
         margin: auto;
     }
