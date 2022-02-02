@@ -32,7 +32,7 @@ export const getStaticPaths = async (context) => {
         headers: { 'X-API-KEY': process.env.API_KEY }
     };
 
-    const res = await fetch('https://laprn.microcms.io/api/v1/blog', key)
+    const res = await fetch('https://laprn.microcms.io/api/v1/english', key)
 
     const repos = await res.json();
 

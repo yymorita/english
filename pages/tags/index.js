@@ -19,7 +19,7 @@ export default function Tags({ tags }) {
 }
 
 export const getStaticProps = async () => {
-    const data = await client.get({ endpoint: 'english', queries: { fields: 'tags' } });
+    const data = await client.get({ endpoint: 'english', queries: { fields: 'tags', limit: 1024} });
     const taglist1 = data.contents.map((tag) => tag.tags[0])
     const taglist = taglist1.filter(function (value, i, self) {
         return self.indexOf(value) == i
