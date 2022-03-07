@@ -17,6 +17,9 @@
     text-align: center;
 }
 
+.ul_pagination {
+    padding-left: 0rem;
+}
 .postBorderBottom {
     border-bottom: 1px solid #808080;
 }
