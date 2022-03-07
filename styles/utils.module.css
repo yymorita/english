@@ -2,6 +2,10 @@
     content: "📅";
 }
 
+#tags::before {
+    content: "🏷️"
+}
+
 .leftSide {
     text-align: left;
 }
