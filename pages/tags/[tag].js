@@ -16,7 +16,7 @@ export default function TagId({ posts, tag }) {
                 breakpointCols={breakpointColumnsObj}
                 className={masonryStyle.myMasonryGrid}
                 columnClassName={masonryStyle.myMasonryGridColumn}>
-                {posts.map((post) => <Card id={post.id} title={post.title} date={post.date} snippet={post.snippet} tags={post.tags}/>)}
+                {posts.map((post) => <Card id={post.id} title={post.title} date={post.createdAt} snippet={post.snippet} tags={post.tags}/>)}
             </Masonry>
         </Layout>
     )
