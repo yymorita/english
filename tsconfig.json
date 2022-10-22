@@ -18,10 +18,14 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
+  "baseUrl": "./",
+  "paths": {
+    "@/*": ["./src/*"]
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", 
+    "**/*.tsx", "pages/calendar.js", "pages/index.js", "components/pagination.js", "components/pagination.js", 
     ],
   "exclude": [
     "node_modules"

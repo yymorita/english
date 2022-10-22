@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "dayjs": "^1.10.7",
+    "dotenv": "^16.0.3",
     "microcms-js-sdk": "^1.2.0",
     "moment": "^2.29.1",
     "next": "^11.0.0",
