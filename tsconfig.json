@@ -25,7 +25,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "pages/calendar.js", "pages/index.js", "components/pagination.js", "components/pagination.js", 
+    "**/*.tsx", "pages/tags/[tag].js", "pages/calendar.js", "pages/index.js", "components/pagination.js", "components/pagination.js", 
     ],
   "exclude": [
     "node_modules"
