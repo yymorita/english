@@ -25,7 +25,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", 
+    "**/*.tsx", "components/pagination.js", "components/pagination.js", 
     ],
   "exclude": [
     "node_modules"
