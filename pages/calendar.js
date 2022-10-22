@@ -19,7 +19,8 @@ const convertDateList = (dateList) => {
         let key = obj['createdAt'];
         if (noDuplicateList.includes(key)) {
             let current_count = acc.slice(-1)[0].count;
-            let index = acc.findIndex((v) => v.createdAt === key && v.count === current_count);
+            // let index = acc.findIndex((v) => v.createdAt === key && v.count === current_count);
+            let index = acc.findIndex((v) => dayjs(v.createdAt).isSame(dayjs(key), 'day') && v.count === current_count);
             acc[index].count += 1;
         } else {
             acc.push(obj);
@@ -31,10 +32,10 @@ const convertDateList = (dateList) => {
 }
 
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: 'english'});
+  const data = await client.get({ endpoint: 'english', queries: {limit: 550, fields: 'createdAt'}});
   let contents = data.contents;
 
-  let format_contents = contents.map(obj => ({createdAt: dayjs(obj.createdAt).format('YYYY-MM-DD')}))
+  let format_contents = contents.map(obj => ({Date: dayjs(obj.createdAt).toDate()}))
   let achvmnts = convertDateList(format_contents)
   console.log(achvmnts)
   return {
