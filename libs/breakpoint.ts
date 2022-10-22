@@ -1,9 +1,4 @@
-interface breakpointColumnsObj {
-    default: number,
-    800: number
-}
-
-export const breakpointColumnsObj: breakpointColumnsObj = {
+export const breakpointColumnsObj = {
     default: 1,
     800: 1,
 }
