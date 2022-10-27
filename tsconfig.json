@@ -31,7 +31,7 @@
     "**/*.tsx",
     "pages/tags/[tag].js",
     "pages/calendar.js",
-    "pages/index.js",
+    "pages/index.tsx",
     "components/pagination.js",
     "components/pagination.js"
   ],
