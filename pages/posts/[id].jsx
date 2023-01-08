@@ -20,7 +20,7 @@ export default function BlogId({ blog }) {
                     __html: `${blog.contents}`,
                 }}
             />
-            <Link href={`/`}>ホームに戻る</Link>
+            <Link href={'/'}>ホームに戻る</Link>
         </Layout>
     );
 }

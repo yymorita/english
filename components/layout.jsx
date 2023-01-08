@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Pagination from './pagination'
 
 
-function Layout({ children }: { children: React.ReactNode}) {
+function Layout({ children }) {
     return (
         <div className='layout'>
             <Head>
