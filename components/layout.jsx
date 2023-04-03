@@ -14,8 +14,8 @@ function Layout({ children }) {
             </Head>
             <div className={utilStyles.leftSide}>
                 <Link href={`/`}>英語学習の記録</Link> | 
-                <Link href={'/tags'}>タグ</Link> | 
-                <Link href='https://daily.cocno.co/posts/vt3ormwet'>英語のハノン</Link>
+                <Link href={'/tags'}> タグ</Link> |
+                <Link href='https://daily.cocno.co/posts/vt3ormwet'> 英語のハノン</Link>
             </div>
             {children}
         </div>
