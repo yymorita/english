@@ -7,6 +7,7 @@ function Card(props) {
         return (
             <div className='card'>
                 <h2><Link href={`/posts/${props.id}`}>{props.title}</Link></h2>
+                <span>{Moment(props.date).format('YYYY年MM月DD日')}</span> |
                 {props.tags.map((tag) => <span id={utilStyles.tags}><Link href={`/tags/${tag}`}> {tag}</Link></span>)}
                 <div
                     dangerouslySetInnerHTML={{
@@ -14,7 +15,6 @@ function Card(props) {
                     }}
                 />
                 <p className={utilStyles.rightSide}><Link href={`/posts/${props.id}`}>続きを読む</Link></p>
-                <p>{Moment(props.date).format('YYYY年MM月DD日')}</p>
             </div>
         )
 }
