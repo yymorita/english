@@ -28,6 +28,10 @@ h2 {
     margin-top: .5rem;
 }
 
+ul {
+    list-style-type: "- ";
+}
+
 @media (min-width: 1000px) {
     body {
         padding: 0rem;
