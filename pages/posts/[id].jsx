@@ -13,7 +13,7 @@ export default function BlogId({ blog }) {
             <h1>{blog.title}</h1>
             <span id={utilStyles.calendar}>投稿日: {Moment(blog['createdAt']).format('YYYY年MM月DD日')}</span>
             <div className={utilStyles.postBorderBottom}>
-                <span id={utilStyles.tags}>タグ: {blog.tags.map((tag) => <Link href={`/tags/${tag}`}>{tag}</Link>)}</span>
+                <span id={utilStyles.tags}>{blog.tags.map((tag) => <Link href={`/tags/${tag}`}> {tag}</Link>)}</span>
             </div>
             <div
                 dangerouslySetInnerHTML={{
