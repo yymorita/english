@@ -7,7 +7,7 @@ function Card(props) {
         return (
             <div className='card'>
                 <h2><Link href={`/posts/${props.id}`}>{props.title}</Link></h2>
-                {props.tags.map((tag) => <span><Link href={`/tags/${tag}`}>{tag}</Link></span>)}
+                {props.tags.map((tag) => <span id={utilStyles.tags}><Link href={`/tags/${tag}`}> {tag}</Link></span>)}
                 <div
                     dangerouslySetInnerHTML={{
                         __html: `${props.snippet}`,
