@@ -11,7 +11,7 @@ export default function BlogId({ blog }) {
                 <title>{blog.title}</title>
             </Head>
             <h1>{blog.title}</h1>
-            <span id={utilStyles.calendar}>投稿日: {Moment(blog['createdAt']).format('YYYY年MM月DD日')}</span>
+            <span id={utilStyles.calendar}>Posted At: {Moment(blog['createdAt']).format("ddd, MMM DD YYYY")}</span>
             <div className={utilStyles.postBorderBottom}>
                 <span id={utilStyles.tags}>{blog.tags.map((tag) => <Link href={`/tags/${tag}`}> {tag}</Link>)}</span>
             </div>
