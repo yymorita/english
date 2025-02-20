@@ -9,7 +9,7 @@ import utilStyles from '../styles/utils.module.css'
 import Pagination from '../components/pagination'
 
 export default function Home({ blog, totalCount }) {
-  const cards = blog.map((blog) => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.createdAt} snippet={blog.snippet} tags={blog.tags} />)
+  const cards = blog.map((blog) => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.createdAt} snippet={blog.contents.slice(0, 300) + "..."} tags={blog.tags} />)
   return (
     <Layout>
       <Masonry
@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
       title: string,
       contents: string,
       tags: string[],
-      snippet: string
+      // snippet: string
     }[],
     totalCount: number,
     offset: number,

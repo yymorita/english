@@ -19,7 +19,7 @@ export default function BlogPageId({ blog, totalCount }) {
                 className={masonryStyle.myMasonryGrid}
                 columnClassName={masonryStyle.myMasonryGridColumn}
             >
-                {blog.map(blog => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.createdAt} snippet={blog.snippet} tags={blog.tags} />)}
+                {blog.map(blog => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.createdAt} snippet={blog.contents.slice(0, 300) + "..."} tags={blog.tags} />)}
             </Masonry>
             <Pagination totalCount={totalCount} />
         </Layout>
