@@ -13,7 +13,7 @@ function Pagination ({ totalCount }) {
             {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
                 <li key={index} className={utilStyles.pagination}>
                     <Link href={`/page/${number}`}>
-                        <a>{number}</a>
+                        {number}
                     </Link>
                 </li>
             ))}
