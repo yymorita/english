@@ -8,8 +8,8 @@ import { breakpointColumnsObj } from '../libs/breakpoint'
 import utilStyles from '../styles/utils.module.css'
 import Pagination from '../components/pagination'
 
-export default function Home({ blog, totalCount }) {
-  const cards = blog.map((blog) => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.createdAt} snippet={blog.contents.slice(0, 300) + "..."} tags={blog.tags} />)
+export default function Home({ blogs, totalCount }) {
+  const cards = blogs.map((blog) => <Card key={blog.id} id={blog.id} title={blog.title} date={blog.createdAt} snippet={blog.contents.slice(0, 300) + "..."} tags={blog.tags} />)
   return (
     <Layout>
       <Masonry
@@ -43,7 +43,7 @@ export const getStaticProps = async () => {
   } = await client.get({ endpoint: 'english', queries: { orders: '-createdat', limit: 14 } });
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
       totalCount: data.totalCount
     },
   };
