@@ -32,7 +32,6 @@ export const getStaticPaths = async () => {
         .then(res => res.json())
         .catch(() => null);
     const paths = data.contents.map(content => `/tags/${content.tags}`);
-    console.log(paths)
     return { paths, fallback: false };
 };
 
@@ -44,7 +43,6 @@ export const getStaticProps = async context => {
         // params : { 'filters': `tags[contains]${encodeURI(tag)}`},
     };
     const limit = 2048
-    console.log(tag)
     const data = await fetch(
         `https://laprn.microcms.io/api/v1/english/?limit=${limit}&filters=tags[contains]${encodeURI(tag)}`,
         key
