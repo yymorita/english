@@ -30,7 +30,7 @@ export const getStaticPaths = async () => {
     const key = {
         headers: { 'X-API-KEY': process.env.API_KEY },
     };
-    const limit = 1024
+    const limit = 2048
     const data = await fetch(`https://laprn.microcms.io/api/v1/english?limit=${limit}`, key)
         .then(res => res.json())
         .catch((err) => console.log(err));
