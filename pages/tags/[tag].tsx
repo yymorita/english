@@ -1,10 +1,10 @@
+import { client } from '../../libs/client'
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import Masonry from 'react-masonry-css'
 import masonryStyle from '../../components/masonry.module.css'
 import Card from '../../components/card'
 import { breakpointColumnsObj } from '../../libs/breakpoint'
-
 
 export default function TagId({ posts, tag }) {
     return(
@@ -22,37 +22,36 @@ export default function TagId({ posts, tag }) {
     )
 }
 
-// 静的生成のためのパスを指定します
+// 静的生成のためのパスを指定
 export const getStaticPaths = async () => {
-    const key = {
-        headers: { 'X-API-KEY': process.env.API_KEY },
+    const data: {
+        contents: {
+          id: string,
+          createdAt: string,
+          updatedAt: string,
+          publishedAt: string,
+          revisedAt: string,
+          title: string,
+          contents: string,
+          tags: string[],
+          snippet: string
+        }[],
+        totalCount: number,
+        offset: number,
+        limit: number
+      } = await client.get({ endpoint: 'english', queries: { limit: 1024} });
+      const paths = data.contents.map(content => `/tags/${content.tags}`);
+      return { paths, fallback: false}
     };
-    const limit = 2048
-    const data = await fetch(`https://laprn.microcms.io/api/v1/english?limit=${limit}`, key)
-        .then(res => res.json())
-        .catch(() => null);
-    const paths = data.contents.map(content => `/tags/${content.tags}`);
-    return { paths, fallback: false };
-};
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps = async context => {
     const tag = context.params.tag
-    const key = {
-        headers: { 'X-API-KEY': process.env.API_KEY },
-        // params : { 'filters': `tags[contains]${encodeURI(tag)}`},
-    };
-    const limit = 2048
-    const data = await fetch(
-        `https://laprn.microcms.io/api/v1/english/?limit=${limit}&filters=tags[contains]${encodeURI(tag)}`,
-        key
-    )
-        .then(res => res.json())
-        .catch((err) => err);
-    return {
+    const data = await client.get({ endpoint: 'english', queries: { limit: 2048, filters: `tags[contains]${tag}`} });
+      return { 
         props: {
             posts: data.contents,
             tag: tag
         },
+      };
     };
-};

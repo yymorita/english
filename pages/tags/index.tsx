@@ -35,8 +35,7 @@ export const getStaticProps = async () => {
         offset: number,
         limit: number
       } = await client.get({ endpoint: 'english', queries: { fields: 'tags', limit: 1024} });
-    const taglist1 = data.contents.map((tag) => tag.tags[0])
-    const taglist = taglist1.filter(function (value, i, self) {
+    const taglist = data.contents.map((tag) => tag.tags[0]).filter(function (value, i, self) {
         return self.indexOf(value) == i
     })
     return {

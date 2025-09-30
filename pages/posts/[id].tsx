@@ -1,3 +1,4 @@
+import { client } from '../../libs/client'
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import Moment from 'moment'
@@ -25,35 +26,18 @@ export default function BlogId({ blog }) {
     );
 }
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-    const key = {
-        headers: { 'X-API-KEY': process.env.API_KEY },
-    };
-    const limit = 2048
-    const data = await fetch(`https://laprn.microcms.io/api/v1/english?limit=${limit}`, key)
-        .then(res => res.json())
-        .catch((err) => console.log(err));
+    const data = await client.get({ endpoint: 'english', queries: { limit: 2048 } });
     const paths = data.contents.map(content => `/posts/${content.id}`);
     return { paths, fallback: false };
-};
+}
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async context => {
     const id = context.params.id;
-    const key = {
-        headers: { 'X-API-KEY': process.env.API_KEY },
-    };
-    
-    const data = await fetch(
-        'https://laprn.microcms.io/api/v1/english/' + id,
-        key,
-    )
-        .then(res => res.json())
-        .catch((err) => console.log(err));
+    const data = await client.get({ endpoint: 'english', contentId: id });
     return {
         props: {
             blog: data,
         },
     };
-};
+}
