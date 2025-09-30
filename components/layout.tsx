@@ -14,7 +14,8 @@ function Layout({ children }) {
             </Head>
             <div className={utilStyles.leftSide}>
                 <Link href={`/`}>HOME</Link> | 
-                <Link href={'/tags'}> TAGS</Link>
+                <Link href={'/tags'}> TAGS</Link> |
+                SINCE 2020~
             </div>
             {children}
         </div>
