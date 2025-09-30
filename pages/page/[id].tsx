@@ -27,7 +27,7 @@ export default function BlogPageId({ blog, totalCount }) {
 }
 
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: 'english', queries: { limit: 2048 } });
+    const data = await client.get({ endpoint: 'english', queries: { limit: 512 } });
     const paths = range(1, Math.ceil(data.totalCount / PER_PAGE)).map((repo) => `/page/${repo}`)
     return { paths, fallback: false };
 };

@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
         totalCount: number,
         offset: number,
         limit: number
-      } = await client.get({ endpoint: 'english', queries: { limit: 1024} });
+      } = await client.get({ endpoint: 'english', queries: { limit: 512} });
       const paths = data.contents.map(content => `/tags/${content.tags}`);
       return { paths, fallback: false}
     };
@@ -47,7 +47,7 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps = async context => {
     const tag = context.params.tag
-    const data = await client.get({ endpoint: 'english', queries: { limit: 2048, filters: `tags[contains]${tag}`} });
+    const data = await client.get({ endpoint: 'english', queries: { limit: 512, filters: `tags[contains]${tag}`} });
       return { 
         props: {
             posts: data.contents,

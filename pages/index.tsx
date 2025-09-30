@@ -35,7 +35,6 @@ export const getStaticProps = async () => {
       title: string,
       contents: string,
       tags: string[],
-      // snippet: string
     }[],
     totalCount: number,
     offset: number,

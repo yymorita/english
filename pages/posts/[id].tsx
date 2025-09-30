@@ -27,7 +27,7 @@ export default function BlogId({ blog }) {
 }
 
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: 'english', queries: { limit: 2048 } });
+    const data = await client.get({ endpoint: 'english', queries: { limit: 512 } });
     const paths = data.contents.map(content => `/posts/${content.id}`);
     return { paths, fallback: false };
 }
